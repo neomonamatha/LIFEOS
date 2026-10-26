@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIFEOS | Career growth intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">L</div>
+          <div>
+            <div class="brand-name">LIFEOS</div>
+            <div class="brand-tag">Skills. Career. Momentum.</div>
+          </div>
+        </div>
+        <nav class="topnav">
+          <a href="#overview">Overview</a>
+          <a href="#profile">Profile</a>
+          <a href="#opportunities">Opportunities</a>
+          <a href="#dashboard">Dashboard</a>
+        </nav>
+        <button class="primary-btn small" id="resetDemoBtn">Reset demo</button>
+      </header>
+
+      <main>
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <span class="eyebrow">Career intelligence for the next chapter</span>
+            <h1>Build a future-ready career with clarity.</h1>
+            <p>
+              LIFEOS helps South African talent connect their skills to meaningful
+              opportunities, track readiness, and plan a practical career roadmap.
+            </p>
+            <div class="cta-row">
+              <button class="primary-btn" id="startOnboardingBtn">Start onboarding</button>
+              <button class="secondary-btn" id="jumpToProfileBtn">View profile</button>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <strong id="stat-readiness">82%</strong>
+                <span>readiness</span>
+              </div>
+              <div>
+                <strong id="stat-saved">4</strong>
+                <span>saved roles</span>
+              </div>
+              <div>
+                <strong id="stat-apps">3</strong>
+                <span>applications</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <div class="mini-card glass">
+              <span>Career readiness</span>
+              <h3 id="ready-score">82%</h3>
+              <div class="meter">
+                <i id="readinessBar"></i>
+              </div>
+            </div>
+            <div class="mini-card accent">
+              <span>SkillQuest</span>
+              <h3>Next milestone</h3>
+              <p>Power BI & stakeholder storytelling</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-grid">
+          <div class="panel card" id="profile">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow small">Professional profile</span>
+                <h2>Tell your story</h2>
+              </div>
+              <span class="badge neutral" id="profileCompletionBadge">65% complete</span>
+            </div>
+
+            <form id="profileForm" class="stacked-form">
+              <div class="form-row two">
+                <label>
+                  Full name
+                  <input type="text" name="fullName" placeholder="Aaliyah Ndlovu" />
+                </label>
+                <label>
+                  Career interest
+                  <input type="text" name="careerInterest" placeholder="Product Analyst" />
+                </label>
+              </div>
+
+              <label>
+                Professional summary
+                <textarea name="summary" rows="3" placeholder="I help teams turn messy data into better business decisions..."></textarea>
+              </label>
+
+              <div class="form-row two">
+                <label>
+                  Education
+                  <input type="text" name="education" placeholder="BSc Information Systems" />
+                </label>
+                <label>
+                  Work status
+                  <select name="status">
+                    <option value="Open to work">Open to work</option>
+                    <option value="Employed">Employed</option>
+                    <option value="Student">Student</option>
+                    <option value="Freelancer">Freelancer</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button class="primary-btn" type="submit">Save profile</button>
+                <button class="secondary-btn" type="button" id="mockPrivacyBtn">Privacy: Public profile</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel card" id="skillsPanel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow small">Skills intelligence</span>
+                <h2>Current strengths</h2>
+              </div>
+            </div>
+
+            <div id="skillsList" class="skill-list"></div>
+
+            <div class="mini-form">
+              <input id="newSkillInput" type="text" placeholder="Add a skill" />
+              <button class="primary-btn small" id="addSkillBtn">Add</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel card" id="opportunities">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow small">Opportunity discovery</span>
+              <h2>Relevant roles</h2>
+            </div>
+            <div class="filters">
+              <select id="trackFilter">
+                <option value="all">All tracks</option>
+                <option value="Product">Product</option>
+                <option value="Data">Data</option>
+                <option value="Operations">Operations</option>
+                <option value="Software">Software</option>
+              </select>
+              <select id="typeFilter">
+                <option value="all">All types</option>
+                <option value="Job">Jobs</option>
+                <option value="Internship">Internships</option>
+                <option value="Graduate">Graduate programs</option>
+                <option value="Learnership">Learnerships</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="opportunityList" class="opportunity-list"></div>
+        </section>
+
+        <section class="dashboard-grid" id="dashboard">
+          <div class="panel card">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow small">Dashboard</span>
+                <h2>Career plan</h2>
+              </div>
+            </div>
+            <ul class="checklist" id="priorityList"></ul>
+          </div>
+
+          <div class="panel card">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow small">Saved roles</span>
+                <h2>My shortlist</h2>
+              </div>
+            </div>
+            <div id="savedList" class="compact-list"></div>
+          </div>
+
+          <div class="panel card">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow small">Applications</span>
+                <h2>Tracking</h2>
+              </div>
+            </div>
+            <div id="applicationList" class="compact-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal hidden" id="onboardingModal" aria-modal="true" role="dialog">
+      <div class="modal-card">
+        <div class="panel-header">
+          <div>
+            <span class="eyebrow small">Onboarding</span>
+            <h2>Welcome to LIFEOS</h2>
+          </div>
+          <button class="icon-btn" id="closeOnboardingBtn" aria-label="Close">×</button>
+        </div>
+
+        <form id="onboardingForm" class="stacked-form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Mpho Nkosi" required />
+          </label>
+          <label>
+            Professional summary
+            <textarea name="summary" rows="3" placeholder="I build accessible experiences and solve business problems..." required></textarea>
+          </label>
+          <label>
+            Primary career interest
+            <input type="text" name="interest" placeholder="Product Management" required />
+          </label>
+          <button class="primary-btn" type="submit">Create my profile</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
