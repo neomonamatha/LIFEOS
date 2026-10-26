@@ -1,0 +1,169 @@
+# LIFEOS
+
+LIFEOS is a browser-based career and life-management prototype for students, graduates, and early-career professionals in South Africa. It combines opportunity discovery, skill tracking, self-assessment, coaching, budgeting, and community-style networking in a single interface.
+
+## Project status
+
+This repository currently contains a static, browser-only prototype rather than a production-ready application. The code in `index.html` is a self-contained HTML/CSS/JavaScript app that stores demo data in `localStorage` and does not connect to a real backend, authentication provider, or database.
+
+The project is best understood as a front-end demo / proof-of-concept, not a full application backend.
+
+## Current features in the codebase
+
+The implementation includes:
+
+- onboarding and account creation flow
+- profile setup and headline editing
+- skills, interests, and opportunity preferences
+- opportunity suggestions and filtering by type
+- save/dismiss logic for opportunities
+- readiness scoring based on skills matching
+- SkillQuest XP tasks and progression
+- AI-coach style prompts and simulated responses
+- money / budget tracking with sample entries
+- roadmap goal creation and milestone tracking
+- community feed and story-like post UI
+- people connection simulation
+- messages and chat mockups
+- community circles and marketplace listings
+
+## Technology stack
+
+- HTML5
+- CSS3 (custom styling and responsive mobile layout)
+- Vanilla JavaScript
+- Google Fonts
+- Browser localStorage for demo persistence
+- No Node.js build pipeline
+- No framework, no TypeScript, no backend service, no Supabase integration
+
+## Folder structure
+
+```text
+.
+├── README.md
+├── index.html
+└── (no build config, migrations, tests, or backend files present)
+```
+
+## Prerequisites
+
+- A modern browser (Chrome, Edge, Firefox, Safari)
+- Internet access for the Google Fonts stylesheet
+- Optional: a simple local static server for easier local preview
+
+## Installation and local run
+
+Because this is a static front-end demo, there is no dependency installation step.
+
+Open the file directly in a browser:
+
+```bash
+open index.html
+```
+
+Or serve it locally:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## Environment variables
+
+There are no application environment variables configured in this codebase.
+
+This is important: the app does not currently use a real backend or secret-bearing configuration, so there are no production credentials to expose.
+
+## Supabase configuration
+
+No Supabase schema, migrations, security policies, connection code, or service-role keys are present in the repository state available here.
+
+The app currently uses in-browser localStorage instead of Supabase. That means:
+
+- no production authentication
+- no secure profile ownership model
+- no RLS enforcement
+- no database-backed record persistence
+- no real opportunity application processing
+
+## Development commands
+
+There is no framework toolchain to run. For local development, the practical commands are limited to serving the page:
+
+```bash
+python3 -m http.server 8000
+```
+
+## Testing
+
+No automated tests, linting configuration, or build process are present in the project as it currently stands.
+
+The code should be validated manually by opening the app in a browser and exercising core flows such as:
+
+- onboarding
+- save and filter opportunities
+- complete a SkillQuest
+- add money entries
+- create goals
+- open community and message screens
+
+## Deployment
+
+This project is static and can be deployed to a simple static host such as:
+
+- GitHub Pages
+- Netlify
+- Vercel static hosting
+- any CDN-backed static web host
+
+However, because it is a demo, it should not be treated as production-ready or production-secure.
+
+## Security precautions
+
+This project as provided does not expose secrets, API keys, or service-role credentials.
+
+Still, the following should be treated as required before anything production-grade is attempted:
+
+- replace browser-only localStorage with secure backend auth
+- add proper profile and ownership checks
+- protect privileged roles and admin functions
+- avoid storing PII in client-side storage without encryption and clear policy controls
+- do not expose real Supabase keys in frontend code
+- validate all user-controlled inputs on the backend
+
+## Known limitations
+
+This app should be considered a design and UX prototype, not a completed production system.
+
+Known limitations in the current code include:
+
+- no real authentication or session management
+- no real backend or database integration
+- no Supabase migrations or RLS policies
+- no tests or CI pipeline
+- static demo data only
+- no real file uploads, onboarding verification, or employer workflows
+- no secure payment flows
+- no real AI backend or external APIs
+
+## Recommended next steps
+
+If this project is to become a real LIFEOS application, the next practical steps are:
+
+1. define the real data model and approved architecture
+2. set up Supabase or another backend
+3. implement secure auth and role-based access control
+4. move demo data into real tables and migrations
+5. convert the HTML/JS prototype into a proper app structure
+6. add automated tests for profile ownership, saved opportunities, and applications
+7. review privacy and POPIA/security requirements before launch
+
+## Summary
+
+LIFEOS as currently recovered is a functional demo interface with strong visual design and a broad feature set, but it is not yet a secure or production-ready system. The repository needs a real backend and proper engineering hardening before it can be treated as a real application.
